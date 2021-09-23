@@ -1,6 +1,7 @@
 require('dotenv').config();
 const getOpenWeather = require('./openweather');
 const client = require('./../database/config');
+const db = require('./../database/db');
 
 exports.signin = function signin(req, res, next) {
     res.json({ status: 'signin' });
@@ -12,6 +13,10 @@ exports.signup = function signup(req, res, next) {
 
 exports.me = function me(req, res, next) {
     res.json({ status: 'me' });
+};
+
+exports.products = function products(req, res, next) {
+    res.json({ status: 'productus' });
 };
 
 exports.authenticated = function authenticated(req, res, next) {

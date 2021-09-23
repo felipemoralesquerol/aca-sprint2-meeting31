@@ -12,9 +12,11 @@ router.get('/', (req, res) => { res.json('Hola mundo!') });
 
 // Importación de rutas
 const auth = require('./routes/auth');
+const product = require('./routes/product');
 
 app.use(router);
 app.use(auth);
+app.use(product);
 
 app.set('port', 3000);
 app.listen(3000, function (err) {
