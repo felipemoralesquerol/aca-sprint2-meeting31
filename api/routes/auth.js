@@ -9,4 +9,6 @@ router.post('/api/signup', Controller.signup);
 
 router.get('/api/me', Controller.authenticated, Controller.me)
 
+router.get('/api/me/temperatura', Controller.authenticated, Controller.temperatura)
+
 module.exports = router;

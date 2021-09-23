@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 
+const redis = require('../api/database/config');
+
 const { Router } = require('express');
 const router = Router();
 const app = express();

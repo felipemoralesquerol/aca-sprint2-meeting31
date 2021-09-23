@@ -1,3 +1,7 @@
+require('dotenv').config();
+const getOpenWeather = require('./openweather');
+const client = require('./../database/config');
+
 exports.signin = function signin(req, res, next) {
     res.json({ status: 'signin' });
 };
@@ -15,3 +19,26 @@ exports.authenticated = function authenticated(req, res, next) {
     //res.status(500).json({ status: 'not authenticated' });
 };
 
+
+exports.temperatura = async function temperatura(req, res, next) {
+    client.get("temperatura", async (error, rep) => {
+        if (error) {
+            // hubo un error
+            res.json(error);
+        }
+        if (rep) {
+            res.json({ temperatura: rep })
+
+        } else {
+            const info = await getOpenWeather();
+            const temperatura = info.main.temp;
+            console.log('Consulta al servicio OpenWeatherMap:' + temperatura)
+            client.set("temperatura", temperatura, 'EX', '60');
+
+            res.json({ temperatura: temperatura })
+        }
+    });
+
+
+
+};
