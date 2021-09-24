@@ -1,10 +1,10 @@
 {
-  "name": "aca-boilerplate",
+  "name": "aca-sprint2-meeting31",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon api/app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +12,9 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1",
     "mysql2": "^2.3.0",
     "node-fetch": "^2.6.2",
     "redis": "^3.1.2",

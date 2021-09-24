@@ -1,11 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
-
-const redis = require('../api/database/config');
+const helmet = require("helmet");
 
 const { Router } = require('express');
 const router = Router();
 const app = express();
+
+app.use(helmet());
 app.use(morgan('dev'));
 
 router.get('/', (req, res) => { res.json('Hola mundo!') });

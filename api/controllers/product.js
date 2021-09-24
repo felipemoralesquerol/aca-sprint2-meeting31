@@ -17,7 +17,7 @@ exports.list = async function list(req, res, next) {
             //si no están, los busco en la base de datos
             const productos = await Producto.findAll()
             console.log('Consulta a la database:' + productos)
-            client.set("productos", JSON.stringify(productos), 'EX', '60');
+            client.set("productos", JSON.stringify(productos), 'EX', '600');
 
             res.json({ productos: productos })
         }
