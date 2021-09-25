@@ -16,6 +16,8 @@ exports.list = async function list(req, res, next) {
       //si no están, los busco en la base de datos
       const productos = await Producto.findAll();
       console.log("Consulta a la database:" + productos);
+
+      // Agregado de clave en redis
       client.set("productos", JSON.stringify(productos), "EX", "600");
 
       res.json({ productos: productos });
@@ -45,4 +47,14 @@ exports.agregar = async function agregar(req, res, next) {
   client.del("productos");
 
   res.json({ producto });
+};
+
+exports.borrar = async function borrar(req, res, next) {
+  const producto = await Producto.destroy({ where: { id: req.params.id } });
+  console.log(producto);
+
+  //Borrado de clave para que se recargue en nueva operacion que lo necesite
+  client.del("productos");
+
+  res.json({ status: "ok" });
 };
