@@ -1,0 +1,38 @@
+[
+  {
+    "id": 2,
+    "codigo": "AG1",
+    "descripcion": "Agua",
+    "costo": 80,
+    "precio_venta": "100",
+    "createdAt": "2021-09-25T02:27:53.000Z",
+    "updatedAt": "2021-09-25T02:27:53.000Z"
+  },
+  {
+    "id": 3,
+    "codigo": "AG1",
+    "descripcion": "Agua Tonica",
+    "costo": 80,
+    "precio_venta": "2344",
+    "createdAt": "2021-09-25T02:28:07.000Z",
+    "updatedAt": "2021-09-25T02:28:07.000Z"
+  },
+  {
+    "id": 4,
+    "codigo": "AG21",
+    "descripcion": "Agua Tonica",
+    "costo": 80,
+    "precio_venta": "5000",
+    "createdAt": "2021-09-25T02:30:43.000Z",
+    "updatedAt": "2021-09-25T20:40:59.000Z"
+  },
+  {
+    "id": 5,
+    "codigo": "AG21",
+    "descripcion": "Agua Tonica",
+    "costo": 80,
+    "precio_venta": "2344",
+    "createdAt": "2021-09-25T02:32:54.000Z",
+    "updatedAt": "2021-09-25T02:32:54.000Z"
+  }
+]

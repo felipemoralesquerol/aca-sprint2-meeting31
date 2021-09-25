@@ -11,6 +11,7 @@ exports.list = async function list(req, res, next) {
       res.json(error);
     }
     if (rep) {
+      console.log(rep);
       res.json({ productos: rep });
     } else {
       //si no están, los busco en la base de datos
@@ -19,7 +20,6 @@ exports.list = async function list(req, res, next) {
 
       // Agregado de clave en redis
       client.set("productos", JSON.stringify(productos), "EX", "600");
-
       res.json({ productos: productos });
     }
   });
